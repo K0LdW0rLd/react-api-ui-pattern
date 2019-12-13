@@ -10,7 +10,6 @@ class Characters extends Component {
         <p><span>Species:</span> {this.props.species}</p>
         <p><span>Gender:</span> {this.props.gender}</p>
         <p><span>Origin:</span> {this.props.origin}</p>
-        <p><span>Status:</span> {this.props.status}</p>
         <p><span>Last Location:</span> {this.props.location}</p>
       </div>
     )

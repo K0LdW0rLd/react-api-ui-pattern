@@ -27,18 +27,21 @@ class App extends Component {
   //What is going to display
   render () {
     let characterResults = this.state.rickMortyData
-    const characters = characterResults.map(character=>
-      {return <Characters key = {character.name} name = {character.name}
-      />})
-    const status = characterResults.map(character=>
-      {return <Characters key = {character.status} status = {character.status}
+    const character = characterResults.map(character=>{
+      return <Characters key = {character.name}
+      name = {character.name}
+      status = {character.status}
+      species = {character.species}
+      gender = {character.gender}
+      origin = {character.origin.name}
+      location = {character.location.name}
       />})
     return (
       <div>
         <Header />
         <h1>Rick and Morty Characters</h1>
         <ul>
-          {characters}
+         {character}
         </ul>
       </div>
     );
