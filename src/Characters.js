@@ -6,6 +6,7 @@ class Characters extends Component {
     return (
       <div>
         <h1>{this.props.name}</h1>
+        <a href= '#'><img src={this.props.image} alt='Character Cover'></img></a>
         <p><span>Status:</span> {this.props.status}</p>
         <p><span>Species:</span> {this.props.species}</p>
         <p><span>Gender:</span> {this.props.gender}</p>

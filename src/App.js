@@ -30,6 +30,7 @@ class App extends Component {
     const character = characterResults.map(character=>{
       return <Characters key = {character.name}
       name = {character.name}
+      image = {character.image}
       status = {character.status}
       species = {character.species}
       gender = {character.gender}
