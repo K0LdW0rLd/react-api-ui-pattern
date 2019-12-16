@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Header from './Header';
 import Characters from './Characters';
 
+
 class App extends Component {
   constructor() {
     super ()
@@ -40,10 +41,10 @@ class App extends Component {
     return (
       <div>
         <Header />
-        <h1>Rick and Morty Characters</h1>
-        <ul>
+        <h1 className='App'>Rick and Morty Characters</h1>
+        <div className='App'>
          {character}
-        </ul>
+        </div>
       </div>
     );
   }
