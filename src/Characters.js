@@ -21,9 +21,7 @@ class Characters extends Component {
 
   modalDisplay(evt){
     evt.preventDefault();
-    let modalDisplay = this.props.className === 'modal'
-    console.log(evt.target.className)
-    modalDisplay.style.display = "block";
+    console.log(this.props.name)
   }
 
   render () {
