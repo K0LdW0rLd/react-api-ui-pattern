@@ -1,6 +1,6 @@
 import React , {Component} from 'react';
 import styled from 'styled-components';
-import './Modal.css'
+import Modal from './Modal';
 
 const Div = styled.div`
   background-color: antiquewhite;
@@ -18,33 +18,42 @@ const img = styled.img`
 `;
 
 class Characters extends Component {
-
-  modalDisplay(evt){
-    evt.preventDefault();
-    console.log(this.props.name)
+  constructor() {
+    super ();
+    this.state = {
+    show: false
+    }
+    this.showModal = this.showModal.bind(this);
+    this.hideModal = this.showModal.bind(this);
   }
+  showModal(){
+    this.setState({ show: true });
 
+  }
+  hideModal(){
+    this.setState({ show: false });
+  }
   render () {
+    const {show} = this.state;
     return (
       <Div>
         <div>
-        <a href= '#' onClick={(e) => this.modalDisplay(e)}>
+        <a href= '#' onClick={() => this.setState({ show: !show })}>
           <h1>{this.props.name}</h1>
           <img src={this.props.image} alt='Character Cover'></img>
         </a>
         </div>
-        <div className = 'modal'>
-          <div className = 'modal Content'>
-          <span className = 'close'>X</span>
-            <h1 className = 'characterName'>{this.props.name}</h1>
-            <a href= '#'><img src={this.props.image} alt='Character Cover'></img></a>
-            <p><span>Status:</span> {this.props.status}</p>
-            <p><span>Species:</span> {this.props.species}</p>
-            <p><span>Gender:</span> {this.props.gender}</p>
-            <p><span>Origin:</span> {this.props.origin}</p>
-            <p><span>Last Location:</span> {this.props.location}</p>
-          </div>
-        </div>
+        {show ?  (
+          <Modal 
+          name = {this.props.name}
+          image = {this.props.image}
+          status = {this.props.status}
+          species = {this.props.species}
+          gender = {this.props.gender}
+          origin = {this.props.origin.name}
+          location = {this.props.location.name}
+          />
+        ) : null }
       </Div>
     )
   }

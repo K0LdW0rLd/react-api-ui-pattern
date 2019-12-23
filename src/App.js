@@ -7,10 +7,13 @@ import Characters from './Characters';
 
 class App extends Component {
   constructor() {
-    super ()
+    super ();
     this.state = {
-      rickMortyData: []
-    }
+      rickMortyData: [],
+      // show: false
+    };
+    // this.showModal = this.showModal.bind(this);
+    // this.hideModal = this.showModal.bind(this);
   }
   //Fetch the data upon load
   componentDidMount(){
@@ -22,8 +25,15 @@ class App extends Component {
         this.setState({rickMortyData: res.results})
         console.log(this.state.rickMortyData)
         console.log(this.state.rickMortyData);
-    })
+    });
   }
+  // showModal(){
+  //   this.setState({ show: true });
+  // };
+
+  // hideModal(){
+  //   this.setState({ show: false });
+  // };
 
   //What is going to display
   render () {
@@ -38,6 +48,7 @@ class App extends Component {
       origin = {character.origin.name}
       location = {character.location.name}
       />})
+    
     return (
       <div>
         <Header />
