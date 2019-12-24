@@ -23,16 +23,8 @@ class Characters extends Component {
     this.state = {
     show: false
     }
-    this.showModal = this.showModal.bind(this);
-    this.hideModal = this.showModal.bind(this);
   }
-  showModal(){
-    this.setState({ show: true });
 
-  }
-  hideModal(){
-    this.setState({ show: false });
-  }
   render () {
     const {show} = this.state;
     return (
@@ -43,7 +35,7 @@ class Characters extends Component {
           <img src={this.props.image} alt='Character Cover'></img>
         </a>
         </div>
-        {show ?  (
+        {show ?  (<a href = '#' onClick={() => this.setState({ show: !show })}>
           <Modal 
           name = {this.props.name}
           image = {this.props.image}
@@ -52,7 +44,7 @@ class Characters extends Component {
           gender = {this.props.gender}
           origin = {this.props.origin.name}
           location = {this.props.location.name}
-          />
+          /></a>
         ) : null }
       </Div>
     )
