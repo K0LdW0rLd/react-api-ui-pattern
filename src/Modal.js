@@ -8,7 +8,6 @@ class Modal extends Component {
     return (
       <div className = 'modal'>
         <a className = 'modal Content'>
-          
         <span className = 'close'>X</span>
           <h1 className = 'characterName'>{this.props.name}</h1>
           <a href= '#'><img src={this.props.image} alt='Character Cover'></img></a>
